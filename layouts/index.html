@@ -2,8 +2,12 @@
 
 <main>
     <div class="intro">
-        {{ with .Site.Params.profilePic }} <img class="profile" src="{{ . }}"> {{ end }}
-        <h1>{{ .Site.Title }}</h1>
+        {{ with .Site.Params.landingPic }}
+            <img class="landing-pic" src="{{ . }}">
+        {{ else }}
+            {{ with .Site.Params.profilePic }} <img class="profile" src="{{ . }}"> {{ end }}
+            <h1>{{ .Site.Title }}</h1>
+        {{ end }}
         <h2>{{ markdownify .Site.Params.Description }}</h2>
         {{ with .Content }} <div class="homepage-content text-justify">{{ . }}</div> {{ end }}
     </div>
