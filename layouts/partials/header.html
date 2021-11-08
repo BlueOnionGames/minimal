@@ -58,7 +58,7 @@
                     {{ if .Site.Menus.icon }}
                         <ul class="nav navbar-nav navbar-right">
                             {{ range sort .Site.Menus.icon }}
-                                <li class="navbar-icon"><a href="{{ .URL }}"
+                                <li class="navbar-icon" title="{{ .Title }}"><a href="{{ .URL }}"
                                     {{ if hasPrefix .URL "http" }}
                                         target=_blank
                                     {{ end }}
